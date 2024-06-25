@@ -433,11 +433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/chaiyasittayabovorn/Desktop/Training/DotNet/demo1/demo1.csproj",
+      "projectUniqueName": "/Users/chaiyasittayabovorn/Desktop/Training/DotNet/dotnet8_intro/demo1/demo1.csproj",
       "projectName": "demo1",
-      "projectPath": "/Users/chaiyasittayabovorn/Desktop/Training/DotNet/demo1/demo1.csproj",
+      "projectPath": "/Users/chaiyasittayabovorn/Desktop/Training/DotNet/dotnet8_intro/demo1/demo1.csproj",
       "packagesPath": "/Users/chaiyasittayabovorn/.nuget/packages/",
-      "outputPath": "/Users/chaiyasittayabovorn/Desktop/Training/DotNet/demo1/obj/",
+      "outputPath": "/Users/chaiyasittayabovorn/Desktop/Training/DotNet/dotnet8_intro/demo1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/chaiyasittayabovorn/.nuget/NuGet/NuGet.Config"
