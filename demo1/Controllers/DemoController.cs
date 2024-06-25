@@ -7,11 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace demo1.Controllers
 {
+    // [Route("api/[controller]")]
     [Route("api/[controller]")]
     [ApiController]
-    public class DemoController : ControllerBase
+    public class Demo1Controller : ControllerBase
     {
-        public DemoController()
+        public Demo1Controller()
         {
         }
 
