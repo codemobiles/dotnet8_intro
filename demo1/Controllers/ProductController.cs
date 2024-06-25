@@ -74,6 +74,18 @@ namespace demo1.Controllers
             return Ok($"Input: {newProduct.Name}, {newProduct.Price}, {newProduct.Stock}, ");
         }
         
+        [HttpDelete("{id}")]
+        public IActionResult DeleteModelById(int id)
+        {
+            return Ok($"Delete: {id}");
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult PutTModel(int id, [FromBody] Product newProduct)
+        {
+            
+            return Ok($"Update: {id}, {newProduct.Name}, {newProduct.Stock}, {newProduct.Price}");
+        }
         
     }
 }
