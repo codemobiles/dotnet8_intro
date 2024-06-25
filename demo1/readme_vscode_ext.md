@@ -1,0 +1,7 @@
+code --install-extension ms-mssql.mssql
+code --install-extension ms-dotnettools.csharp
+code --install-extension matijarmk.dotnet-core-commands
+code --install-extension doggy8088.netcore-snippets
+code --install-extension fudge.auto-using
+code --install-extension adrianwilczynski.namespace
+code --install-extension tintoy.msbuild-project-tools
