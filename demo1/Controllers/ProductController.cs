@@ -117,29 +117,20 @@ namespace demo1.Controllers
             this.DbContext.SaveChanges();
             return Ok("delete successfully");
         }
+
+
         
+        [HttpPut("update-product/{id}")]
+        public IActionResult UpdateProduct(int id, [FromForm] demo1.Models.Product updateProduct)
+        {
             
-
-        // [HttpDelete("delete-product/{id}")]
-        // public IActionResult DeleteProduct(int id)
-        // {
-        //     var product = this.DbContext.Products.Find(id);                        
-        //     this.DbContext.Products.Remove(product!);
-        //     this.DbContext.SaveChanges();
-        //     return Ok("delete successfully");
-        // }
-
-        // [HttpPut("update-product/{id}")]
-        // public IActionResult PutTModel(int id, [FromForm] demo1.Models.Product updateProduct)
-        // {
-            
-        //     var product = this.DbContext.Products.Find(id)!;
-        //     product.Name = updateProduct.Name;
-        //     product.Price = updateProduct.Price;                        
-        //     product.Stock = updateProduct.Stock;                        
-        //     this.DbContext.Products.Update(product);
-        //     this.DbContext.SaveChanges();
-        //     return Ok("update successfully");
-        // }
+            var product = this.DbContext.Products.Find(id)!;
+            product.Name = updateProduct.Name;
+            product.Price = updateProduct.Price;                        
+            product.Stock = updateProduct.Stock;                        
+            this.DbContext.Products.Update(product);
+            this.DbContext.SaveChanges();
+            return Ok("update successfully");
+        }
     }
 }
