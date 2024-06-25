@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using demo1.Database;
 using Microsoft.AspNetCore.Mvc;
 //using demo1.Models;
 
@@ -19,8 +20,12 @@ namespace demo1.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        public ProductController()
+        public DatabaseContext DbContext { get;set; }
+
+
+        public ProductController(DatabaseContext dbContext)
         {
+            this.DbContext = dbContext;
         }
 
 
@@ -86,6 +91,15 @@ namespace demo1.Controllers
             
             return Ok($"Update: {id}, {newProduct.Name}, {newProduct.Stock}, {newProduct.Price}");
         }
+
+
+        [HttpGet("product-db")]
+        public IActionResult GetProductFromDB()
+        {
+            var result = this.DbContext.Products.ToList();
+            return Ok(result);
+        }
+        
         
     }
 }
