@@ -28,6 +28,9 @@ https://github.com/codemobiles/cm-prepare-dev-tools-full-stack/blob/main/dotnet_
   ```
 
 ```
+# dotnet-ef package 
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 
 - https://www.sqlshack.com/working-sql-server-command-line-sqlcmd/
 
@@ -63,7 +66,7 @@ dotnet ef dbcontext scaffold "Server=localhost,1433;user id=sa; password=Mflv[Mf
 - Microsoft.EntityFrameworkCore.SqlServer | dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.10
 
 - run again
-  dotnet ef dbcontext scaffold "Server=localhost,1433;user id=sa; password=Mflv[Mflv[; Database=istock; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Entities -c DatabaseContext --context-dir Data
+  dotnet ef dbcontext scaffold "Server=localhost,1433;user id=sa; password=Mflv[Mflv[; Database=demopos; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Entities -c DatabaseContext --context-dir Data
 
 # check dotnet sdk folder
 
