@@ -29,4 +29,10 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
+
+
+    [HttpGet("GetSimpleData")]
+    public IActionResult GetSimpleData(){
+        return Ok("Hi, I am Lek");
+    }
 }
