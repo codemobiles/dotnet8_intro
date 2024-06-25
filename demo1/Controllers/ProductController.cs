@@ -108,16 +108,17 @@ namespace demo1.Controllers
              this.DbContext.SaveChanges();
              return Ok("insert successfully");
         }
+
+        [HttpDelete("delete-product/{id}")]
+        public IActionResult DeleteProduct(int id)
+        {
+            var product = this.DbContext.Products.Find(id);
+            this.DbContext.Products.Remove(product!);
+            this.DbContext.SaveChanges();
+            return Ok("delete successfully");
+        }
         
-        
-        // [HttpPost("insert-product")]
-        // public IActionResult InsertProduct([FromForm] demo1.Models.Product newProduct)
-        // {
-        //     this.DbContext.Add(newProduct);
-        //     this.DbContext.SaveChanges();
-        //     return Ok("insert successfully");
-        // }
-        
+            
 
         // [HttpDelete("delete-product/{id}")]
         // public IActionResult DeleteProduct(int id)
