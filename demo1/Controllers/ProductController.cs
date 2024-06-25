@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using demo1.Database;
+using demo1.Models;
 using Microsoft.AspNetCore.Mvc;
 //using demo1.Models;
 
@@ -99,7 +100,45 @@ namespace demo1.Controllers
             var result = this.DbContext.Products.ToList();
             return Ok(result);
         }
+
+        [HttpPost("insert-product")]
+        public IActionResult InsertProduct([FromForm] demo1.Models.Product newProduct)
+        {
+             this.DbContext.Add(newProduct);
+             this.DbContext.SaveChanges();
+             return Ok("insert successfully");
+        }
         
         
+        // [HttpPost("insert-product")]
+        // public IActionResult InsertProduct([FromForm] demo1.Models.Product newProduct)
+        // {
+        //     this.DbContext.Add(newProduct);
+        //     this.DbContext.SaveChanges();
+        //     return Ok("insert successfully");
+        // }
+        
+
+        // [HttpDelete("delete-product/{id}")]
+        // public IActionResult DeleteProduct(int id)
+        // {
+        //     var product = this.DbContext.Products.Find(id);                        
+        //     this.DbContext.Products.Remove(product!);
+        //     this.DbContext.SaveChanges();
+        //     return Ok("delete successfully");
+        // }
+
+        // [HttpPut("update-product/{id}")]
+        // public IActionResult PutTModel(int id, [FromForm] demo1.Models.Product updateProduct)
+        // {
+            
+        //     var product = this.DbContext.Products.Find(id)!;
+        //     product.Name = updateProduct.Name;
+        //     product.Price = updateProduct.Price;                        
+        //     product.Stock = updateProduct.Stock;                        
+        //     this.DbContext.Products.Update(product);
+        //     this.DbContext.SaveChanges();
+        //     return Ok("update successfully");
+        // }
     }
 }

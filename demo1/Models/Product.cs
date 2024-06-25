@@ -5,7 +5,7 @@ namespace demo1.Models;
 
 public partial class Product
 {
-    public int ProductId { get; set; }
+    public int? ProductId { get; set; }
 
     public string? Name { get; set; }
 
@@ -15,5 +15,5 @@ public partial class Product
 
     public int Price { get; set; }
 
-    public DateTime Created { get; set; }
+    public DateTime? Created { get; set; }
 }
