@@ -7,6 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace demo1.Controllers
 {
+
+    public class Product {
+        public string? Name { get; set; }
+        public double Price { get; set; } = 0;
+        public int Stock { get; set; } = 0;
+    }
+
+
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
@@ -51,6 +59,21 @@ namespace demo1.Controllers
         {
             return Ok($"product {id}, {type}, {keyword}");
         }
+
+        //// public ActionResult<IEnumerable<string>> GetALL()
+        [HttpGet("products/all")]
+        public IActionResult GetALL()
+        {
+            return Ok(new string[] {"product1","product2","product3"});
+        }
+
+
+        [HttpPost("add")]
+        public IActionResult AddProduct([FromBody] Product newProduct)
+        {
+            return Ok($"Input: {newProduct.Name}, {newProduct.Price}, {newProduct.Stock}, ");
+        }
+        
         
     }
 }
