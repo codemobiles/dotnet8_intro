@@ -39,7 +39,18 @@ namespace demo1.Controllers
         {
             return Ok($"product {id}, {type}");
         }
+
+        [HttpGet("products/search")]
+        public IActionResult SearchProducts([FromQuery] string keyword)
+        {
+            return Ok($"search product keyword: {keyword}");
+        }
         
+        [HttpGet("products/search/{id}/{type}")]
+        public IActionResult SearchProductsWith(int id, string type, [FromQuery] string keyword)
+        {
+            return Ok($"product {id}, {type}, {keyword}");
+        }
         
     }
 }
